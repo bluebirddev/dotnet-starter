@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Bluebird.Core.Starter.Test": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "DATABASE_CONNECTION_STRING": "Host=localhost;Port=5432;Username=postgres;Password=Paycey;Database=postgres;"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bluebird.Core.Starter.Api", "Bluebird.Core.Starter.Api\Bluebird.Core.Starter.Api.csproj", "{62D235BE-F202-487B-9EBD-ACEA7DFF7745}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bluebird.Core.Starter.Domain", "Bluebird.Core.Starter.Domain\Bluebird.Core.Starter.Domain.csproj", "{C8F42A75-2278-4ED8-80CC-9F77BF5AFC43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bluebird.Core.Starter.Test", "Bluebird.Core.Starter.Test\Bluebird.Core.Starter.Test.csproj", "{D24065B7-1A58-4EA0-A751-F5BA54488BEB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bluebird.Core.Starter.Repository.PostgresSql", "Bluebird.Core.Starter.Repository.PostgresSql\Bluebird.Core.Starter.Repository.PostgresSql.csproj", "{066E3F92-6398-4241-B453-7A342937E33B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integrations", "Integrations", "{33EEE3FD-603B-4DA6-A8BA-6A7983E2C08A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integration.JWT", "Integration.JWT\Integration.JWT.csproj", "{CFDC23E6-1506-415E-B7BC-678509F1D56B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62D235BE-F202-487B-9EBD-ACEA7DFF7745}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D235BE-F202-487B-9EBD-ACEA7DFF7745}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D235BE-F202-487B-9EBD-ACEA7DFF7745}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D235BE-F202-487B-9EBD-ACEA7DFF7745}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F42A75-2278-4ED8-80CC-9F77BF5AFC43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F42A75-2278-4ED8-80CC-9F77BF5AFC43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F42A75-2278-4ED8-80CC-9F77BF5AFC43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F42A75-2278-4ED8-80CC-9F77BF5AFC43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D24065B7-1A58-4EA0-A751-F5BA54488BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24065B7-1A58-4EA0-A751-F5BA54488BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24065B7-1A58-4EA0-A751-F5BA54488BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24065B7-1A58-4EA0-A751-F5BA54488BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{066E3F92-6398-4241-B453-7A342937E33B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{066E3F92-6398-4241-B453-7A342937E33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{066E3F92-6398-4241-B453-7A342937E33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{066E3F92-6398-4241-B453-7A342937E33B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFDC23E6-1506-415E-B7BC-678509F1D56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFDC23E6-1506-415E-B7BC-678509F1D56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFDC23E6-1506-415E-B7BC-678509F1D56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFDC23E6-1506-415E-B7BC-678509F1D56B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CFDC23E6-1506-415E-B7BC-678509F1D56B} = {33EEE3FD-603B-4DA6-A8BA-6A7983E2C08A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27F67D9A-81E1-46FD-83E5-10DD6F6E1266}
+	EndGlobalSection
+EndGlobal
