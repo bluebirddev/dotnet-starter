@@ -20,6 +20,11 @@ using System.Reflection;
 using System.Text;
 using Bluebird.Core.Starter.Domain.Contracts.Repositories;
 using Bluebird.Core.Starter.Domain.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using Bluebird.Core.Starter.Api.Authorization;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add logging (Can add different kinds of logging here)
@@ -90,46 +95,25 @@ void ConfigureDbConnections(WebApplicationBuilder builder)
 }
 void ConfigureAuthentication(WebApplicationBuilder builder)
 {
-    // Configure authentication here
-    /*var jwtTokenConfig = configurationManager.GetSection("Authentication")?.Get<AuthenticationTokenConfig>();
-    if (jwtTokenConfig == null)
+    builder.Services
+    .AddAuthentication(options =>
     {
-        jwtTokenConfig = new AuthenticationTokenConfig
-        {
-            // default
-            AccessTokenExpiration = 15,
-            RefreshTokenExpiration = 480,
-            Issuer = "N/A",
-            Audience = "N/A",
-            Secret = "",
-            EnvironmentName = "Development" // hardcoded for now
-        };
-    }
-
-
-    services.AddSingleton(jwtTokenConfig);*/
-    /*services.AddAuthentication(x =>
-    {
-        x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-        x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
     })
-    .AddJwtBearer(x =>
+    .AddJwtBearer(options =>
     {
-        x.RequireHttpsMetadata = true;
-        x.SaveToken = true;
-        x.TokenValidationParameters = new TokenValidationParameters
+        options.Authority = $"https://{builder.Configuration["Auth0:Domain"]}/";
+        options.Audience = builder.Configuration["Auth0:Audience"];
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = true,
-            ValidIssuer = jwtTokenConfig.Issuer,
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(jwtTokenConfig.Secret)),
-            NameClaimType = "name",
-            ValidAudience = jwtTokenConfig.Audience,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ClockSkew = TimeSpan.FromMinutes(1)
+            NameClaimType = ClaimTypes.NameIdentifier
         };
-    });*/
+    });
+
+
+    builder.Services.AddAuthorization();
+    builder.Services.AddSingleton<IAuthorizationHandler, HasScopeHandler>();
 }
 void ConfigureDependencyInjection(WebApplicationBuilder builder)
 {

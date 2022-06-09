@@ -12,7 +12,6 @@ using Bluebird.Core.Starter.Domain.Models;
 
 namespace Bluebird.Core.Starter.Controllers.V1
 {
-    //[Authorize]
     [ApiController]
     [Produces("application/json")]
     [Route("[controller]")]
@@ -32,8 +31,8 @@ namespace Bluebird.Core.Starter.Controllers.V1
         /// <summary>
         /// Create Movie
         /// </summary>
-        [HttpPost]
-        [Route("")]
+        [HttpPost("")]
+        [Authorize]
         public async Task<ActionResult<Movie>> Create(MovieUpsertRequest movie)
         {
             var response = await _movieService.Create(movie);
@@ -43,8 +42,7 @@ namespace Bluebird.Core.Starter.Controllers.V1
         /// <summary>
         /// Get Movie
         /// </summary>
-        [HttpGet]
-        [Route("{id}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> Get(Guid id)
         {
             var response = await _movieService.Get(id);
@@ -54,8 +52,7 @@ namespace Bluebird.Core.Starter.Controllers.V1
         /// <summary>
         /// List Movies
         /// </summary>
-        [HttpGet]
-        [Route("")]
+        [HttpGet("")]
         public async Task<ActionResult<ObjectList<Movie>>> List(int skip = 0, int take = 100, string name = null, string releaseYear = null)
         {
             var response = await _movieService.GetAll(skip, take, name, releaseYear);
