@@ -10,10 +10,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bluebird.Core.Starter.Test"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bluebird.Core.Starter.Repository.PostgresSql", "Bluebird.Core.Starter.Repository.PostgresSql\Bluebird.Core.Starter.Repository.PostgresSql.csproj", "{066E3F92-6398-4241-B453-7A342937E33B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integrations", "Integrations", "{33EEE3FD-603B-4DA6-A8BA-6A7983E2C08A}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Integration.JWT", "Integration.JWT\Integration.JWT.csproj", "{CFDC23E6-1506-415E-B7BC-678509F1D56B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,16 +32,9 @@ Global
 		{066E3F92-6398-4241-B453-7A342937E33B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{066E3F92-6398-4241-B453-7A342937E33B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{066E3F92-6398-4241-B453-7A342937E33B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CFDC23E6-1506-415E-B7BC-678509F1D56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CFDC23E6-1506-415E-B7BC-678509F1D56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CFDC23E6-1506-415E-B7BC-678509F1D56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CFDC23E6-1506-415E-B7BC-678509F1D56B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{CFDC23E6-1506-415E-B7BC-678509F1D56B} = {33EEE3FD-603B-4DA6-A8BA-6A7983E2C08A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {27F67D9A-81E1-46FD-83E5-10DD6F6E1266}

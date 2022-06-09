@@ -1,12 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.WebUtilities;
-using Microsoft.Extensions.Logging;
-using Bluebird.Core.Starter.Domain.Contracts.Integrations;
 using Bluebird.Core.Starter.Domain.Contracts.Services;
 using Bluebird.Core.Starter.Domain.Models;
 
@@ -17,15 +12,11 @@ namespace Bluebird.Core.Starter.Controllers.V1
     [Route("[controller]")]
     public class MovieController : ControllerBase
     {
-        private readonly ILogger<MovieController> _logger;
         private readonly IMovieService _movieService;
-        private readonly UserManager<IdentityUser> _userManager;
 
-        public MovieController(ILogger<MovieController> logger, IMovieService movieService, UserManager<IdentityUser> userManager)
+        public MovieController(IMovieService movieService)
         {
-            _logger = logger;
             _movieService = movieService;
-            _userManager = userManager;
         }
 
         /// <summary>

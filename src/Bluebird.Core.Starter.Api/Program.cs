@@ -1,4 +1,3 @@
-using Integration.JWT;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Rewrite;
@@ -9,7 +8,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using Bluebird.Core.Starter.Domain.Contracts.Integrations;
 using Bluebird.Core.Starter.Domain.Contracts.Services;
 using Bluebird.Core.Starter.Repository.PostgresSql;
 using Bluebird.Core.Starter.Repository.PostgresSql.Repositories;
@@ -17,7 +15,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
-using System.Text;
 using Bluebird.Core.Starter.Domain.Contracts.Repositories;
 using Bluebird.Core.Starter.Domain.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -129,7 +126,6 @@ void ConfigureDependencyInjection(WebApplicationBuilder builder)
     #endregion Service Layer
 
     #region Integration Layer
-    builder.Services.AddSingleton<IAuthenticationTokenIntegration, JWTIntegration>();
     #endregion Integration Layer
 
     #region Gateway Layer
