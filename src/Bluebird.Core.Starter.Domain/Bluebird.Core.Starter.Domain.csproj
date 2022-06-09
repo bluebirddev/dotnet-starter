@@ -6,8 +6,11 @@
 
   <ItemGroup>
     <Compile Remove="Contracts\Gateways\**" />
+    <Compile Remove="Contracts\Integrations\**" />
     <EmbeddedResource Remove="Contracts\Gateways\**" />
+    <EmbeddedResource Remove="Contracts\Integrations\**" />
     <None Remove="Contracts\Gateways\**" />
+    <None Remove="Contracts\Integrations\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,10 +21,6 @@
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
     <PackageReference Include="Npgsql" Version="6.0.4" />
     <PackageReference Include="System.Collections" Version="4.3.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Contracts\Integrations\" />
   </ItemGroup>
 
 </Project>
